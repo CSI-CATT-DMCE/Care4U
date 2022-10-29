@@ -17,6 +17,29 @@
         app:layout_constraintHorizontal_bias="0.164"
         app:layout_constraintStart_toStartOf="parent" />
 
+
+    <TextView
+        android:id="@+id/client_signal"
+        android:layout_width="44dp"
+        android:layout_height="46dp"
+        android:background="@color/red"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/counselor_signal"
+        tools:layout_editor_absoluteY="42dp" />
+
+    <TextView
+        android:id="@+id/counselor_signal"
+        android:layout_width="44dp"
+        android:layout_height="46dp"
+        android:background="@color/navy_blue"
+        android:text=""
+        app:layout_constraintEnd_toStartOf="@+id/client_signal"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="42dp" />
+
     <TextView
         android:id="@+id/author"
         android:layout_width="match_parent"
