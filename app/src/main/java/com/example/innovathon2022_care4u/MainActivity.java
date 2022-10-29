@@ -10,7 +10,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Intent i = new Intent(MainActivity.this, JitsiActivity.class);
+        Intent i = new Intent(MainActivity.this, LoginActivity.class);
         MainActivity.this.startActivity(i);
     }
 
