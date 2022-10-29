@@ -7,6 +7,9 @@
     android:background="@color/grey">
 
 
+    <TextView android:id="@+id/client_signal"></TextView>
+    <TextView android:id="@+id/counselor_signal"></TextView>
+
     <EditText
         android:id="@+id/message"
         android:layout_width="314dp"
