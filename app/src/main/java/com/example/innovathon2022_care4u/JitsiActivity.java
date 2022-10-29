@@ -30,8 +30,13 @@ public class JitsiActivity extends AppCompatActivity {
     };
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        String jitsi_meeting_code = getIntent()
+                .getExtras()
+                .getString("jitsi_meeting_code");
+
+        if (jitsi_meeting_code.isEmpty()) throw new AssertionError();
 
         // Initialize default options for Jitsi Meet conferences.
         URL serverURL;
@@ -42,17 +47,21 @@ public class JitsiActivity extends AppCompatActivity {
             e.printStackTrace();
             throw new RuntimeException("Invalid server URL!");
         }
+
         JitsiMeetConferenceOptions defaultOptions
                 = new JitsiMeetConferenceOptions.Builder()
                 .setServerURL(serverURL)
                 .build();
+
         JitsiMeet.setDefaultConferenceOptions(defaultOptions);
+
         registerForBroadcastMessages();
 
         JitsiMeetConferenceOptions options
                 = new JitsiMeetConferenceOptions.Builder()
-                .setRoom("teamalpha_test")
+                .setRoom(jitsi_meeting_code)
                 .build();
+
         JitsiMeetActivity.launch(this, options);
     }
 
