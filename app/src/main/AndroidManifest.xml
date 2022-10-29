@@ -34,6 +34,8 @@
                 android:value="" />
         </activity>
         <activity android:name=".ChatActivity"></activity>
+        <activity android:name=".JitsiActivity"></activity>
+        <activity android:name=".ForgotPassword"></activity>
         <activity
             android:name=".MainActivity"
             android:exported="true"
