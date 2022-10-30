@@ -60,8 +60,9 @@ public class DashProfile extends Fragment {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getContext(), "You have logged out successfully", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getContext(),LoginActivity.class));
-
+                Intent intent = new Intent(getContext(), LoginActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
             }
         });
 
